@@ -2,3 +2,4 @@ pandas
 streamlit
 folium
 requests
+joblib
