@@ -15,19 +15,7 @@ top20_cities = [
 @st.cache_resource
 def load_model_and_scalers():
     
-        # Dropbox-Download-Link mit ?dl=1 für direkten Download
-    url = "https://www.dropbox.com/scl/fi/sb9xzcxr4jpfcg7qar710/finalizedmodel.pkl?rlkey=be32f85ib0kjmt20ht61xlhj5&st=l6esu7rz&dl=1"
-    local_filename = "finalizedmodel.pkl"
-
-    # Datei herunterladen und speichern
-    response = requests.get(url)
-    with open(local_filename, "wb") as f:
-        f.write(response.content)
-
-    # Modell laden
-    model = joblib.load(local_filename)
-
-    
+    model = joblib.load("finalizedmodel.pkl")
     scaler = joblib.load("scaler.pkl")
     label_encoder = joblib.load("label_encoder.pkl")
     return model, scaler, label_encoder
