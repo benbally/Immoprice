@@ -9,7 +9,7 @@ page = st.sidebar.radio("Go to", ["USA Map", "Property Price Estimator"])
 # Lade die entsprechenden Seiten
 if page == "USA Map":
     # Importiere die Logik aus us_map.py
-    import pages.us_map
+    import immoprice.pages.us_map
 elif page == "Property Price Estimator":
     # Importiere die Logik aus streamlitapp.py
-    import pages.streamlitapp
+    import immoprice.pages.streamlitapp
