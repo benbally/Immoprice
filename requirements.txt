@@ -3,3 +3,4 @@ streamlit
 folium
 requests
 joblib
+scikit-learn
