@@ -13,9 +13,12 @@ import streamlit as st
 import requests
 
 
-#Load data set
-data_path = "/Users/benjaminbally/desktop/USA-data.zip.csv"
-df = pd.read_csv(data_path)
+# Downloading file from drive and loading it 
+url = f"https://www.dropbox.com/scl/fi/rhh1vj1ex844onfggscew/USA-data.zip.csv?rlkey=xdjaa7rp9ohgsu3letxjthps8&dl=1"
+response = requests.get(url)
+with open("USA-data.zip.csv", "wb") as f:
+    f.write(response.content)
+df = pd.read_csv("USA-data.zip.csv")
 
 
 # Top 20 US cities
