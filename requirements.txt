@@ -4,3 +4,4 @@ folium
 requests
 joblib
 scikit-learn
+scikit-learn==1.4.2
