@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 import requests
 
-# Top 20 Städte
+# Top 20 US cities, later used for dropdown user input
 top20_cities = [
     "New York City", "Los Angeles", "Chicago", "Houston", "Phoenix",
     "Philadelphia", "San Antonio", "San Diego", "Dallas", "Austin",
@@ -11,7 +11,8 @@ top20_cities = [
     "Indianapolis", "San Francisco", "Seattle", "Denver", "Washington"
 ]
 
-# Laden des Random Forest Modells, Scalers und LabelEncoders
+# Cash is used to save the random forest model, the scaler and the label encoder, as a result, these ressources are just loaded once 
+# With joblib.load the prior saved "results" of the trained random forest get loaded as well as the used scaler and label encoder
 @st.cache_resource
 def load_model_and_scalers():
     
@@ -22,33 +23,32 @@ def load_model_and_scalers():
 
 model, scaler, label_encoder = load_model_and_scalers()
 
-
+# Subtitles get created and formatting
 st.markdown("<h1 style='text-align: center; margin-bottom: -30px;'>Property Price Estimator</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; margin-bottom: 30px;'>Fill in the details to get an estimate of property prices</h3>", unsafe_allow_html=True)
 
-# Radio-Button Selection
+# Radio-Button Selection for user to decide on currency
 währung = st.radio("Select Currency:", ("🇺🇸 USD", "🇨🇭 CHF"))
 
-
-# User input
+# User can input number of bedsrooms, bathrooms, house size and the city
 bedrooms = st.number_input("Number of Bedrooms:", min_value=1, step=1, value=3)
 bathrooms = st.number_input("Number of Bathrooms:", min_value=1, step=1, value=2)
 house_size = st.number_input("House Size (in sqft):", min_value=1, step=10, value=1000)
 city = st.selectbox("Select City:", top20_cities)
 
-# Coding the city with LabelEncoder, so model works
+# Coverting the city names with LabelEncoder to numerical values, which the model can understand
 city_encoded = label_encoder.transform([city])[0]
 
-# Erstelle DataFrame mit den Eingabedaten
+# Creating DataFrame with user input, so we can use the data to perform a prediction with our rf model later 
 user_input = pd.DataFrame(
     [[bedrooms, bathrooms, city_encoded, house_size]],
     columns=["bed", "bath", "city", "house_size"]
 )
 
-# Skalieren der Eingabedaten
+# Scaling the input data
 user_input_scaled = scaler.transform(user_input)
 
-# Vorhersage durchführen
+# Performing the prediction with the XXXXX
 predicted_price = model.predict(user_input_scaled)
 predicted_price = float(predicted_price[0])
 
