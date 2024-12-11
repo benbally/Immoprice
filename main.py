@@ -23,6 +23,8 @@ estimator_page = st.Page(
 
 pg = st.navigation([map_page, estimator_page])
 
+st.logo("immoprice_logo.png")
+
 
 # Run the navigation menu
 
