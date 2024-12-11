@@ -6,10 +6,13 @@ from PIL import Image
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["USA Map", "Property Price Estimator"])
 
-# Lade die entsprechenden Seiten
+# Dynamisches Laden der Seiten
 if page == "USA Map":
-    # Importiere die Logik aus us_map.py
-    import us_map
-elif page == "Property Price Estimator":
-    # Importiere die Logik aus streamlitapp.py
-    import streamlitapp
+    file_path = os.path.join("us_map.py")
+    with open(file_path, encoding="utf-8") as file:
+        exec(file.read(), globals())
+
+else:
+    file_path = os.path.join("streamlitapp.py")
+    with open(file_path, encoding="utf-8") as file:
+        exec(file.read(), globals())
