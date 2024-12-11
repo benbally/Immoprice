@@ -22,9 +22,17 @@ def load_model_and_scalers():
 
 model, scaler, label_encoder = load_model_and_scalers()
 
+
+st.markdown("<h1 style='text-align: center; margin-bottom: -30px;'>Property Price Estimator</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; margin-bottom: 30px;'>Fill in the details to get an estimate of property prices</h3>", unsafe_allow_html=True)
+
+# Radio-Button Selection
+währung = st.radio("Select Currency:", ("🇺🇸 USD", "🇨🇭 CHF"))
+
+
 # User input
-bedrooms = st.number_input("Number of Bedrooms:", min_value=1, step=1, value=1)
-bathrooms = st.number_input("Number of Bathrooms:", min_value=1, step=1, value=1)
+bedrooms = st.number_input("Number of Bedrooms:", min_value=1, step=1, value=3)
+bathrooms = st.number_input("Number of Bathrooms:", min_value=1, step=1, value=2)
 house_size = st.number_input("House Size (in sqft):", min_value=1, step=1, value=1000)
 city = st.selectbox("Select City:", top20_cities)
 
@@ -43,9 +51,6 @@ user_input_scaled = scaler.transform(user_input)
 # Vorhersage durchführen
 predicted_price = model.predict(user_input_scaled)
 predicted_price = float(predicted_price[0])
-
-# Radio-Button Selection
-währung = st.radio("Select Currency:", ("🇺🇸 USD", "🇨🇭 CHF"))
 
 
 # API query: Conversion of the predicted price from dollars to CHF if the user has specified CHF as the selection 
