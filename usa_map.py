@@ -11,7 +11,7 @@ import requests
 # The dataset includes location, price, number of bedrooms and bathrooms and house size of properties that are currently for sale in the USA
 # For the USA Map, data on property price was used to display the average property price in a given city and the the amount of available properties per city was counted from the dataset
 
-url = f"https://www.dropbox.com/scl/fi/rhh1vj1ex844onfggscew/USA-data.zip.csv?rlkey=xdjaa7rp9ohgsu3letxjthps8&dl=1"
+url = f"https://www.dropbox.com/scl/fi/wou0utc59c1gs4j3tmfvo/USA-data-reduced2.csv?rlkey=k467ardnwmrsjuz7g4to3iv76&st=ky08kmzi&dl=1"
 response = requests.get(url)
 with open("USA-data.zip.csv", "wb") as f:
     f.write(response.content)
