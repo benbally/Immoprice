@@ -59,10 +59,10 @@ if währung == "🇨🇭 CHF":
     response = requests.get(f"https://www.amdoren.com/api/currency.php?api_key=C7AecWnwHkC5rCV9eg65sf2V5FjzpF&from=USD&to=CHF&amount={predicted_price}")
     avg_price_display = response.json().get("amount")
     avg_price_display = float(avg_price_display)
-    avg_price_display = f"CHF {avg_price_display:,.2f}" 
+    avg_price_display = f"CHF {avg_price_display:,.0f}" 
 
 else:
-    avg_price_display = f"${predicted_price:,.2f}"
+    avg_price_display = f"${predicted_price:,.0f}"
 
     
 #Text Box
