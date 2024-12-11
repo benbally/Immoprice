@@ -11,6 +11,7 @@ import joblib
 
 
 # Load the housing market dataset
+# Need to change the file path and running it locally with the dataset
 
 dataset = "/Users/benjaminbally/desktop/usa_data.csv"
 df = pd.read_csv(dataset)
@@ -56,8 +57,7 @@ forest = RandomForestRegressor(
 
 forest.fit(x_train_scaled, y_train)
 
-
-# Save the trained model, scaler, and label encoder
+# Save the trained model, scaler, and label encoder, so we can use it later again and not need to perform the rf training again
 
 joblib.dump(forest, "finalizedmodel.pkl", compress=3)
 joblib.dump(scaler, "scaler.pkl")
