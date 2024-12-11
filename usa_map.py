@@ -7,7 +7,7 @@ import streamlit.components.v1 as components
 import requests
 
 
-# Downloading file from drive and loading it 
+# Downlod hosuing market dataset from drive and loading it 
 # The dataset includes location, price, number of bedrooms and bathrooms and house size of properties that are currently for sale in the USA
 # For the USA Map, data on property price was used to display the average property price in a given city and the the amount of available properties per city was counted from the dataset
 
