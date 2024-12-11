@@ -83,7 +83,7 @@ for city in top20_cities:
     
     weather_info = weather_data.get("current", {})
     temperature = weather_info.get("temperature", "N/A")
-    weather_description = weather_info.get("weather_description", ["N/A"])[0]
+    weather_description = weather_info.get("weather_descriptions", ["N/A"])[0]
 
     
     # Calculate the average property price for the top 20 cities using the housing market dataset
