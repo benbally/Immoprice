@@ -48,13 +48,12 @@ user_input = pd.DataFrame(
 # Scaling the input data
 user_input_scaled = scaler.transform(user_input)
 
-# Performing the prediction with the XXXXX
+# Performing the prediction with the trained model
 predicted_price = model.predict(user_input_scaled)
 predicted_price = float(predicted_price[0])
 
 
-# API query: Conversion of the predicted price from dollars to CHF if the user has specified CHF as the selection 
-
+# API query: Conversion of the predicted price from dollars to CHF if the user has selected CHF as currency
 if währung == "🇨🇭 CHF":   
     response = requests.get(f"https://www.amdoren.com/api/currency.php?api_key=C7AecWnwHkC5rCV9eg65sf2V5FjzpF&from=USD&to=CHF&amount={predicted_price}")
     avg_price_display = response.json().get("amount")
@@ -64,8 +63,7 @@ if währung == "🇨🇭 CHF":
 else:
     avg_price_display = f"${predicted_price:,.0f}"
 
-    
-#Text Box
+#Result box, visual formatting
 st.markdown(f"""
     <div style="border: 1px solid #ff4c4b; padding: 8px; border-radius: 8px; background-color: #f9f9f9; max-width: 400px; margin: 30px auto;">
         <h3 style="text-align: center; color: #ff4c4b;">Estimated Price:</h3>
