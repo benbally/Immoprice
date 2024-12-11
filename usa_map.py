@@ -7,11 +7,10 @@ import streamlit.components.v1 as components
 import requests
 
 
-# Load the housing market dataset (change file path accordingly)
+# Downloading file from drive and loading it 
 # The dataset includes location, price, number of bedrooms and bathrooms and house size of properties that are currently for sale in the USA
 # For the USA Map, data on property price was used to display the average property price in a given city and the the amount of available properties per city was counted from the dataset
 
-# Downloading file from drive and loading it 
 url = f"https://www.dropbox.com/scl/fi/rhh1vj1ex844onfggscew/USA-data.zip.csv?rlkey=xdjaa7rp9ohgsu3letxjthps8&dl=1"
 response = requests.get(url)
 with open("USA-data.zip.csv", "wb") as f:
@@ -74,7 +73,7 @@ for city in top20_cities:
     # Retrieve weather data from the Weatherstack API
 
     weather_params = {
-        "access_key": "260fafda710c5c1d558cf10fa0f1336e" ,
+        "access_key": "f76cce61bafada2ba3e18faaee48e4d7" ,
         "query": f"{city_name}, USA",
         "units": "m"
     }
