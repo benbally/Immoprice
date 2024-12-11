@@ -67,7 +67,7 @@ else:
     
 #Text Box
 st.markdown(f"""
-    <div style="border: 1px solid #ff4c4b; padding: 8px; border-radius: 8px; background-color: #f9f9f9; max-width: 400px; margin: 30px auto 0;">
+    <div style="border: 1px solid #ff4c4b; padding: 8px; border-radius: 8px; background-color: #f9f9f9; max-width: 400px; margin: 30px auto;">
         <h3 style="text-align: center; color: #ff4c4b;">Estimated Price:</h3>
         <h2 style="text-align: center; color: #000;">{avg_price_display}</h2>
     </div>
