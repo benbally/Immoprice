@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-
+import os
 
 # Seitenleiste für Navigation
 st.sidebar.title("Navigation")
