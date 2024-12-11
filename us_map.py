@@ -48,7 +48,7 @@ largest_cities = [
 
 
 # Weatherstack API Setup
-weather_api_key = "260fafda710c5c1d558cf10fa0f1336e"  # API-Schlüssel
+weather_api_key = "f76cce61bafada2ba3e18faaee48e4d7"  # API-Schlüssel
 weather_base_url = "http://api.weatherstack.com/current"
 
 
