@@ -33,7 +33,7 @@ währung = st.radio("Select Currency:", ("🇺🇸 USD", "🇨🇭 CHF"))
 # User input
 bedrooms = st.number_input("Number of Bedrooms:", min_value=1, step=1, value=3)
 bathrooms = st.number_input("Number of Bathrooms:", min_value=1, step=1, value=2)
-house_size = st.number_input("House Size (in sqft):", min_value=1, step=1, value=1000)
+house_size = st.number_input("House Size (in sqft):", min_value=1, step=10, value=1000)
 city = st.selectbox("Select City:", top20_cities)
 
 # Coding the city with LabelEncoder, so model works
