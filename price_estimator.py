@@ -11,7 +11,7 @@ top20_cities = [
     "Indianapolis", "San Francisco", "Seattle", "Denver", "Washington"
 ]
 
-# Laden des Modells, Scalers und LabelEncoders
+# Laden des Random Forest Modells, Scalers und LabelEncoders
 @st.cache_resource
 def load_model_and_scalers():
     
