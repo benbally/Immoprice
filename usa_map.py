@@ -131,7 +131,7 @@ for city in top20_cities:
 
     folium.Marker(
         location=[city_lat, city_lon],
-        popup=folium.Popup(popup_content, max_width=280),
+        popup=folium.Popup(popup_content, max_width= 280),
         tooltip=city_name,
         icon=folium.Icon(icon="city", prefix="fa", color="red")
     ).add_to(usa_map)
