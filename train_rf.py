@@ -53,6 +53,7 @@ forest = RandomForestRegressor(
     max_features="sqrt",  
     min_samples_split=10  
 )
+
 forest.fit(x_train_scaled, y_train)
 
 
