@@ -13,7 +13,7 @@ map_page = st.Page(
 )
 
 estimator_page = st.Page(
-    page="streamlitapp.py",
+    page="price_estimator.py",
     title="Property Price Estimator",
     icon=":material/apartment:",
 )
